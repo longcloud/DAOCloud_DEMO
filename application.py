@@ -10,7 +10,7 @@ def hello_world():
   storage = Storage()
   storage.populate()
   score = storage.score()
-  return "Hello world, %s! & Docker Cloud" % score
+  return "Hello world, & Docker Cloud %s! " % score
 
 class Storage():
   def __init__(self):
@@ -20,7 +20,7 @@ class Storage():
       password=os.getenv('REDIS_PASSWORD', ''))
 
   def populate(self):
-    self.redis.set('score', '1234')
+    self.redis.set('score', '12345')
 
   def score(self):
     return self.redis.get('score')
